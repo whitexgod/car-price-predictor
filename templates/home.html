@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Price Predictor</title>
+  </head>
+  <body class="bg-nav" style="background-image: url('https://blog.spoongraphics.co.uk/wp-content/uploads/2019/03/thumbnail-7.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+  <nav class="navbar bg-nav">
+       <a href="" class="navbar-brand text-light">Car price Predictor</a>
+   </nav><br>
+    <h3 style="font-size:20px;color:red;text-align:center">Want to sell your car but confused about the price?</h3><br>
+  <h2 style="text-align:center;font-weight:bold">Don't worry, you are in the right place!</h2>
+  <hr style="border-style: none;border-top-style: dotted;border-color: grey;border-width: 5px;width: 5%;padding: 5%">
+
+  <div class="col-sm-8" style="text-align:center;margin-left:16%">
+        <form class="form" action="/predict" method="POST" style="text-align:center;font-weight:bold;font-size:20px;color:#e63737">
+            <label class="model_name">Car Model:</label><br>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="model_name" placeholder="Model..."><br>
+            <label class="company">Enter the company of your car:</label><br>
+            <input type="text" name='company' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="company..." value="" required=""><br>
+            <label class="year">Enter the purchase year:</label><br>
+            <input type="text" name='year' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="year..." value="" required=""><br>
+            <label class="kms">Enter the kms driven :</label><br>
+            <input type="text" name='kms' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="kms..." value="" required=""><br>
+            <label class="fuel_type">Enter the fuel type of your car(Petrol/Giesel/LPG):</label><br>
+            <input type="text" name='fuel_type' class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"  placeholder="fuel-type..." value="" required=""><br><br>
+            <button class="btn btn-primary btn-lg "  type="submit">Predict</button>
+        </form>
+      {% if label==1 %}
+        <div class="content">
+            <h3 style="margin-top:5%;color:red;font-weight:bold;font-size:30px">You can sell your car at Rs. {{pred}}</h3>
+        </div>
+      {% elif label==0 %}
+        <div class="content">
+            <h3 style="margin-top:5%;color:red;font-weight:bold;font-size:30px">Please provide valid informations</h3>
+        </div>
+      {% endif %}
+  </div>
+<br><br>
+  <hr style="border-style: none;border-top-style: dotted;border-color: grey;border-width: 5px;width: 5%;padding: 5%">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
