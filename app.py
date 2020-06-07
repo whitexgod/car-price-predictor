@@ -23,7 +23,8 @@ def predict():
         company=company.lower()
         fuel_type.lower()
         company=company.capitalize()
-
+        kms_driven=kms_driven.strip('kms')
+        kms_driven = kms_driven.strip('km')
         def change(text):
             if text == 'petrol':
                 return 1
